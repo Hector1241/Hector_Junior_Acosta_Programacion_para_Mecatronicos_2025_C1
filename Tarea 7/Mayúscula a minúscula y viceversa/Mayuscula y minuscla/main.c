@@ -1,26 +1,34 @@
 #include <stdio.h>
+#include <stdlib.h>
 
-int main() {
-    char letra, convertida;
+int main()
+{
+    char a, s;
 
-    // 1 - Pedir ingresar una letra
-    printf("Ingrese una letra: ");
-    scanf("%c", &letra);
+    // 1- Pedir ingresar una letra
+    printf("\nIngresa una letra: \n");
+    a = getchar();
 
-    // 2 - Verificar que sea una letra
-    if ((letra >= 'A' && letra <= 'Z') || (letra >= 'a' && letra <= 'z')) {
-
-        // 3 - Comprobar si es mayúscula o minúscula y 4 - Convertir
-        if (letra >= 'a' && letra <= 'z') {
-            convertida = letra - 32; // Convierte a mayúscula (ASCII)
-        } else {
-            convertida = letra + 32; // Convierte a minúscula (ASCII)
-        }
-
-        // 5 - Imprimir la letra convertida
-        printf("Letra convertida: %c\n", convertida);
-    } else {
-        printf("Error: No ingresó una letra válida.\n");
+    // 2- Verificar si es letra minÃºscula (a - z)
+    if (a >= 97 && a <= 122)
+    {
+        // 4- Convertir de minÃºscula a mayÃºscula
+        s = a - 32;
+        // 5- Imprimir la letra convertida
+        putchar(s);
+    }
+    // 3- Verificar si es letra mayÃºscula (A - Z)
+    else if (a >= 65 && a <= 90)
+    {
+        // 4- Convertir de mayÃºscula a minÃºscula
+        s = a + 32;
+        // 5- Imprimir la letra convertida
+        putchar(s);
+    }
+    // Si no es una letra
+    else
+    {
+        printf("\nNo es una letra");
     }
 
     return 0;
